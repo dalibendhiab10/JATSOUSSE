@@ -1,0 +1,80 @@
+@import "~bootstrap/scss/bootstrap";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+@import "react-toastify/dist/ReactToastify.css";
+@import "node_modules/react-modal-video/css/modal-video.css";
+@import "node_modules/react-18-image-lightbox/src/style.css";
+
+@import "../../public/assets/css/flaticon.min.css";
+@import "../../public/assets/css/fontawesome.min.css";
+@import "../../public/assets/css/nice-select.min.css";
+@import "../../public/assets/css/spacing.min.css";
+@import "../../public/assets/sass/style.scss";
+
+@font-face {
+    font-family: 'Kashmir';
+    src: url('/fonts/Kashmir.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.input-70s{
+    background: #dfedf0  !important;
+}
+.title-70s {
+    font-size: clamp(8rem, 4vw, 2rem);
+    text-align: center;
+}
+.sub-title-70s {
+    font-size: clamp(1.5rem, 1vw, 1rem);
+    text-align: center;
+    
+}
+
+@media (min-width: 1024px) {
+    .title-70s {
+        font-size: 10rem !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .title-70s {
+        font-size: clamp(5rem, 8vw, 2rem) !important;
+    }
+    .sub-title-70s {
+        font-size: clamp(1rem, 1vw, 1rem) !important
+        }
+}
+
+.fullscreen-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Adjustments for mobile devices */
+@media (max-width: 767px) {
+    .fullscreen-section {
+        padding: 1rem;
+        
+    }
+}
+
+/* Adjustments for tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .fullscreen-section {
+        padding: 1.5rem;
+
+    }
+}
+
+/* Adjustments for desktops */
+@media (min-width: 1024px) {
+    .fullscreen-section {
+        padding: 2rem;
+
+    }
+}
