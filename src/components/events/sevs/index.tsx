@@ -3,16 +3,22 @@ import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
 import Brand from "@/components/common/Brand"
 import EventDetailsArea from "./EventDetailsArea"
+import GoogleCaptchaWrapper from "@/app/google-captcha-wrapper"
 
 const Sevs = () => {
    return (
       <>
+
          {/* <HeaderOne /> */}
+         <GoogleCaptchaWrapper>
          <main>
+         
             <The70s  />
             <EventDetailsArea/>
             <Brand style={true} />
+            
          </main>
+         </GoogleCaptchaWrapper>
          {/* <FooterOne /> */}
       </>
    )

@@ -18,6 +18,7 @@ export default function GoogleCaptchaWrapper({
         appendTo: "head",
         nonce: undefined,
       }}
+      
     >
       {children}
     </GoogleReCaptchaProvider>

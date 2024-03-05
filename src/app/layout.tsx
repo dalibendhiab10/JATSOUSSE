@@ -1,5 +1,6 @@
 import "../styles/index.scss";
 import { DM_Sans, Nunito_Sans, Pacifico } from 'next/font/google'
+import 'semantic-ui-css/semantic.min.css'
 
 const body = DM_Sans({
   weight: ['400', '500', '600', '700', '800', '900'],

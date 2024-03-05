@@ -13,9 +13,9 @@
 
 @font-face {
     font-family: 'Kashmir';
-    src: url('/fonts/Kashmir.ttf') format('truetype');
-    font-weight: normal;
     font-style: normal;
+    font-weight: normal;
+    src: local('Kashmir Regular'), url('Kashmir.woff') format('woff');
 }
 .input-70s{
     background: #dfedf0  !important;
@@ -77,4 +77,51 @@
         padding: 2rem;
 
     }
+}
+
+.qte-btnminus{
+    height: 60px;
+    width: 50px;
+    border-radius: 10px 0px 0px 10px;
+    border : 2px solid #dfedf0;
+}
+
+.qte-btnplus{
+    height: 60px;
+    width: 50px;
+    border-radius:  0px  10px 10px 0px ;
+    border : 2px solid #dfedf0;
+
+}
+.qte-btnminus:hover {
+    border: 2px solid #152a2e;
+}
+
+.qte-btnplus:hover {
+    border: 2px solid #152a2e;
+}
+
+.checkout-btn {
+    border: 2px solid #dfedf0;
+    background: #152a2e  !important;
+    color:#dfedf0 !important;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+
+}
+.checkout-btn:hover {
+    border: 1px solid #152a2e;
+    background: #dfedf0  !important;
+    color:#152a2e !important;
+}
+.checkout-btn:active {
+    border: 1px solid #152a2e;
+    background: #dfedf0  !important;
+    color:#152a2e !important;
+}
+.dimmer{
+    position: fixed !important;
+}
+.ui.segment{
+    box-shadow: none !important;
+    border: none !important;
 }

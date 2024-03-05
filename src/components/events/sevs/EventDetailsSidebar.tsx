@@ -16,7 +16,7 @@ const EventDetailsSidebar = () => {
               <div className="icon">
                 <i className="fa fa-calendar-alt"></i>
               </div>{" "}
-              <div className="content">
+              <div className="content" style={{ color: "black" }}>
                 <h6>Date & Heures</h6>
                 <span>31 december,2022 11:00am - 3:00pm</span>
               </div>
@@ -27,7 +27,7 @@ const EventDetailsSidebar = () => {
               </div>{" "}
               <div className="content">
                 <h6>Location</h6>
-                <span>
+                <span style={{ color: "black" }}>
                   Théâtre Municipal de Sousse , Ave Habib Bourguiba, Sousse
                 </span>
               </div>
@@ -38,7 +38,7 @@ const EventDetailsSidebar = () => {
               </div>{" "}
               <div className="content">
                 <h6>Infoline</h6>
-                <span>
+                <span style={{ color: "black" }}>
                   93 158 643 <br />
                   93 158 643 <br />
                   93 158 643 <br />
@@ -62,7 +62,6 @@ const EventDetailsSidebar = () => {
             loading="lazy"
           ></iframe>
         </div>
-        
       </div>
     </div>
   );
