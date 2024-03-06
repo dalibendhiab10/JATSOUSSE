@@ -6,31 +6,46 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
-
-model User {
+enum typeTicket {
+  etick
+  physical
+}
+enum statusPayment {
+  pending
+  failed
+  completed
+  canceled
+  refunded
+}
+model Client {
  userId    Int      @id @map("_id")
  firstname String
  lastname  String
  phone     Int
  email     String   @unique
- tickets   Ticket[]
 }
-
+model Admin{
+  adminId Int @id @map("_id")
+  firstname String
+  lastname  String
+  email     String   @unique
+  password  String
+}
 model Payment {
  id        Int      @id @map("_id")
- tickets   Ticket[]
  amount    Float
- method    String
- status    String
+ status    statusPayment
  createdAt DateTime @default(now())
 }
 
 model Ticket {
  ticketId Int      @id @map("_id")
  userId    Int
- user      User     @relation(fields: [userId], references: [userId])
- price     Float
- purchased Boolean @default(false)
- paymentId Int
- payment   Payment @relation(fields: [paymentId], references: [id])
+ paymentId Int?
+
+ type      typeTicket
+
+ isPaid    Boolean
+ isUsed    Boolean
+ 
 }

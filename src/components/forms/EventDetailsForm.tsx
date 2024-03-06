@@ -7,13 +7,14 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { Dimmer, Loader, Image, Segment } from "semantic-ui-react";
+import { redirect } from 'next/navigation'
 
 const EventDetailsForm = () => {
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [quantity, setQuantity] = useState(1);
   const [show, setShow] = useState(false);
-
+  const [titleloading, setTitleLoading] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -55,11 +56,12 @@ const EventDetailsForm = () => {
     });
   };
   const submitEnquiryForm = async (gReCaptchaToken: string) => {
+    setTitleLoading("Paiement en cours...");
     handleClose();
     setLoading(true);
     await axios({
       method: "post",
-      url: "/api/CreateTicket",
+      url: "/api/CreateTransaction",
       data: {
         LastName: DataToPass.nom,
         FirstName: DataToPass.prenom,
@@ -74,10 +76,23 @@ const EventDetailsForm = () => {
       },
     })
       .then((response) => {
-        setTimeout(() => {
-          setLoading(false);
-
-        }, 3000);
+        // console.log(response.data);
+        let i = 3;
+        setTitleLoading(`redirection dans ${i} secondes ...`);
+        const intervalId = setInterval(() => {
+          i--;
+          if (i >= 0) {
+            setTitleLoading(`redirection dans ${i} secondes ...`);
+          } else {
+            // Clear the interval when the countdown is finished
+            clearInterval(intervalId);
+            // Perform the redirect
+            window.location.href = response.data.Payurl;
+            // Update the loading state
+            setLoading(false);
+          }
+       }, 1000); // 1000 milliseconds = 1 second
+      
       })
       .catch((error) => {
         console.log(error);
@@ -214,17 +229,24 @@ const EventDetailsForm = () => {
               </div>
             </div>
           </div>
+          <div className="col-sm-6">
+            <div className="form-group total">
+              <label >Total.</label>
+              <label style={{fontWeight:"bold",fontSize:"30px"}} >{quantity*10} DT</label>
+
+            </div>
+          </div>
         </div>
         <div className="col">
           <button type="submit" className="form-control  checkout-btn">
             Valider La commande
           </button>
         </div>
-          <Segment>
-            <Dimmer active={loading}>
-              <Loader size="large">Creating payment</Loader>
-            </Dimmer>
-          </Segment>
+        <Segment>
+          <Dimmer active={loading}>
+            <Loader size="large">{titleloading}</Loader>
+          </Dimmer>
+        </Segment>
         <Modal
           show={show}
           onHide={handleClose}

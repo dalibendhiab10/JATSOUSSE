@@ -1,13 +1,13 @@
-import Contact from "@/components/inner-pages/contact";
+import NotFound from "@/components/inner-pages/error";
 import Wrapper from "@/layout/Wrapper";
 
 export const metadata = {
-   title: "Contact Us Charite - Charity & Donation React Next js Template",
+   title: "PAYMENT COMPLETED || JAT SOUSSE",
 };
 const index = () => {
    return (
       <Wrapper>
-         <Contact />
+         <NotFound />
       </Wrapper>
    )
 }

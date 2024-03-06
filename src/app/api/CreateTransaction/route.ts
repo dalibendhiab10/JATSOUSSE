@@ -31,7 +31,7 @@ export async function POST(request: Request, response: Response) {
     const body = 
       {
         "amount": (10000*Qte),
-        "description": `paiement de ${Qte} Tickets`,
+        "description": `THE 70s : A SYMPHONY OF DECADES | paiement de ${Qte} Tickets`,
         "firstName": FirstName,
         "lastName": LastName,
         "phoneNumber": Phone,
@@ -55,36 +55,40 @@ export async function POST(request: Request, response: Response) {
         "successUrl": "https://dev.konnect.network/gateway/payment-success",
         "failUrl": "https://dev.konnect.network/gateway/payment-failure",
         
-        "theme": "dark"
+        "theme": "light"
       }
       const headers = {
         "x-api-key" : process?.env?.PAYMENT_MODE == "prod" ? process?.env?.PAYMENT_PROD_KEY : process?.env?.PAYMENT_PREPROD_KEY
       }
+      let dataresponse={
+        Payurl:"",
+        paymentRef:""
+      }
       if (process?.env?.PAYMENT_MODE == "prod") {
-        console.log("prod")
         await axios.post(`${process?.env?.PAYMENT_PROD_URL}/payments/init-payment`, body, {headers: headers})
         .then(res => {
-          console.log(res.data)
-          // console.log(`statusCode: ${res}`)
-          // console.log(res.data)
+          dataresponse={
+            Payurl:res.data?.payUrl,
+            paymentRef:res.data?.paymentRef
+          }
+
         })
       } else {
         await axios.post(`${process?.env?.PAYMENT_PREPROD_URL}/payments/init-payment`, body, {headers: headers})
         .then(res => {
-          // console.log(`statusCode: ${res}`)
-          console.log(res.data)
+          dataresponse={
+            Payurl:res.data?.payUrl,
+            paymentRef:res.data?.paymentRef
+          }
         })
       }
 
 
     return NextResponse.json({
+      ...dataresponse,
       success: true,
-      FirstName,
-      LastName,
-      Email,
-      Phone,
-      Qte,
       score: res.data?.score,
+      
     });
   } else {
     console.log("fail: res.data?.score:", res.data?.score);

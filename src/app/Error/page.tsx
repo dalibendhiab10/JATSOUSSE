@@ -1,13 +1,13 @@
-import EventDetails from "@/components/events/sevs";
+import NotFound from "@/components/inner-pages/error";
 import Wrapper from "@/layout/Wrapper";
 
 export const metadata = {
-   title: "Event Slider Charite - Charity & Donation React Next js Template",
+   title: "404 || JAT SOUSSE",
 };
 const index = () => {
    return (
       <Wrapper>
-         <EventDetails />
+         <NotFound />
       </Wrapper>
    )
 }
