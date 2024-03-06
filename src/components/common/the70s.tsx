@@ -1,7 +1,7 @@
 
 const The70s = ({ style,addons }: any) => {
    return (
-      <div className="page-banner-area bgs-cover overlay text-white py-165 rpy-125  fullscreen-section" style={{ backgroundImage: `url(assets/img/background/70sbg.jpg)`  }}>
+      <div className="page-banner-area bgs-cover overlay text-white py-165 rpy-125  fullscreen-section" style={{ backgroundImage: `url('https://i.imgur.com/APg5eLQ.jpeg')`  }}>
          <div className="container">
             <div className="row justify-content-center">
                <div className={`${style ? "col-lg-12" : "col-xl-7 col-lg-8"}`}>

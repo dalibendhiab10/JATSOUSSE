@@ -6,9 +6,8 @@ export const metadata = {
 };
 const index = () => {
   return (
-    <Wrapper>
-      <HomeTwo />
-    </Wrapper>
+<>
+</>
   )
 }
 
