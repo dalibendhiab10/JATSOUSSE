@@ -11,7 +11,6 @@ import About from "./About"
 // import Testimonial from "./Testimonial"
 // import CtaArea from "./CtaArea"
 // import Brand from "@/components/common/Brand"
-import FAQ from "./FAQ"
 import FooterTwo from "@/layout/footers/FooterTwo"
 
 const HomeTwo = () => {
@@ -30,7 +29,6 @@ const HomeTwo = () => {
         {/* <Volunteer style={true} /> */}
         {/* <Testimonial style={false} /> */}
         {/* <CtaArea /> */}
-        <FAQ />
         {/* <Brand style={false} /> */}
       </main>
       <FooterTwo/>

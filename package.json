@@ -32,6 +32,7 @@
     "sass": "^1.69.5",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.5",
+    "sharp": "^0.33.2",
     "slick-carousel": "^1.8.1",
     "uuid": "^9.0.1",
     "wowjs": "^1.1.3",

@@ -18,7 +18,12 @@ const EventDetailsForm = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  let [DataToPass, setDataToPass] = useState({});
+  let [DataToPass, setDataToPass] = useState({
+    nom: "",
+    prenom: "",
+    email: "",
+    phone: "",
+  });
   let [loading, setLoading] = useState(false);
   const {
     register,
@@ -41,8 +46,7 @@ const EventDetailsForm = () => {
   const onSubmit = (data: Record<string, any>) => {
     handleShow();
     if (data) {
-      setDataToPass(data);
-    }
+      setDataToPass(data as { nom: string; prenom: string; email: string; phone: string; });    }
   };
 
   const handleSubmitForm = function (e: any) {
@@ -167,8 +171,8 @@ const EventDetailsForm = () => {
                 placeholder="exp@jat.com"
               />
               <p className="form_error">
-                {errors.email &&
-                  (errors.email.message || "email est obligatoire")}
+              {errors.email && (errors.email.message ? String(errors.email.message) : "email est obligatoire")}
+              
               </p>
             </div>
           </div>
@@ -186,8 +190,8 @@ const EventDetailsForm = () => {
                 placeholder="Phone Number"
               />
               <p className="form_error">
-                {errors.phone &&
-                  (errors.phone.message || "Tel est obligatoire")}
+                {errors.phone && (errors.phone.message ? String(errors.phone.message) : "Tel est obligatoire")}
+
               </p>
             </div>
           </div>
