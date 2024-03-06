@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+ userId    Int      @id @map("_id")
+ firstname String
+ lastname  String
+ phone     Int
+ email     String   @unique
+ tickets   Ticket[]
+}
+
+model Payment {
+ id        Int      @id @map("_id")
+ tickets   Ticket[]
+ amount    Float
+ method    String
+ status    String
+ createdAt DateTime @default(now())
+}
+
+model Ticket {
+ ticketId Int      @id @map("_id")
+ userId    Int
+ user      User     @relation(fields: [userId], references: [userId])
+ price     Float
+ purchased Boolean @default(false)
+ paymentId Int
+ payment   Payment @relation(fields: [paymentId], references: [id])
+}
