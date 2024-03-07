@@ -1,4 +1,4 @@
-import NotFound from "@/components/inner-pages/error";
+import NotFound from "@/components/inner-pages/completed";
 import Wrapper from "@/layout/Wrapper";
 
 export const metadata = {

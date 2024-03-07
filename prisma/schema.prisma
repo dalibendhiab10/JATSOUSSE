@@ -6,10 +6,12 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
 enum typeTicket {
   etick
   physical
 }
+
 enum statusPayment {
   pending
   failed
@@ -17,35 +19,37 @@ enum statusPayment {
   canceled
   refunded
 }
+
 model Client {
- userId    Int      @id @map("_id")
- firstname String
- lastname  String
- phone     Int
- email     String   @unique
-}
-model Admin{
-  adminId Int @id @map("_id")
+  userId    Int    @id @map("_id")
   firstname String
   lastname  String
-  email     String   @unique
+  phone     Int
+  email     String @unique
+}
+
+model Admin {
+  adminId   Int    @id @map("_id")
+  firstname String
+  lastname  String
+  email     String @unique
   password  String
 }
+
 model Payment {
- id        Int      @id @map("_id")
- amount    Float
- status    statusPayment
- createdAt DateTime @default(now())
+  id        Int           @id @map("_id")
+  amount    Float
+  status    statusPayment
+  createdAt DateTime      @default(now())
 }
 
 model Ticket {
- ticketId Int      @id @map("_id")
- userId    Int
- paymentId Int?
+  ticketId  String @id @map("_id")
+  userId    Int?
+  paymentId Int?
 
- type      typeTicket
+  type typeTicket
 
- isPaid    Boolean
- isUsed    Boolean
- 
+  isPaid Boolean
+  isUsed Boolean
 }
