@@ -1,5 +1,4 @@
 // Import necessary modules
-import { NextResponse } from 'next/server';
 import { createCanvas } from 'canvas';
 import nodemailer from 'nodemailer';
 import JsBarcode from 'jsbarcode';

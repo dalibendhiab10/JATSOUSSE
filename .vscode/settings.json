@@ -1,3 +1,5 @@
 {
-    "prisma-smart-formatter.prisma.defaultFormatter": "ajmnz.prisma-import"
+    "prisma-smart-formatter.prisma.defaultFormatter": "ajmnz.prisma-import",
+    "WillLuke.nextjs.addTypesOnSave": true,
+    "WillLuke.nextjs.hasPrompted": true
 }

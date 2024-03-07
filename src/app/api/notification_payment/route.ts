@@ -1,8 +1,9 @@
+import { NextRequest,NextResponse } from 'next/server';
+import {sendBarcodeEmail} from './SendBarcodeEmail';
 import { PrismaClient } from '@prisma/client';
 import { v4 as uuidv4 } from 'uuid';
-import { NextRequest,NextResponse } from 'next/server';
+import {sendToDiscord} from './DiscordWebHook';
 import axios from 'axios';
-import {sendBarcodeEmail} from './SendBarcodeEmail';
 
 const prisma = new PrismaClient();
 export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
@@ -89,7 +90,26 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
                     userId: uuidv4(),
                 }
             })
-        })
+        }).then(async (response) => {
+            // Example data to send to Discord
+            const discordData = {
+                embeds: [{
+                   title: datatoget?.payment.status === "completed" ? 'New Payment Received' : 'Payment Failed',
+                   description: `Payment ID: ${datatoget?.payment.id},
+                                \nAmount: ${datatoget?.payment.amount}, 
+                                \nStatus: ${datatoget?.payment.status}`,
+                   fields: [{
+                     name: 'User Information',
+                     value: `User: ${datatoget?.payment.paymentDetails?.name}, 
+                        \nEmail: ${datatoget?.payment.paymentDetails?.email}`,
+                   }],
+                   color: datatoget?.payment.status === "completed" ? 65280 : 16711680, // Green for completed, Red for others
+                }]
+            };
+            // Send the data to Discord
+            await sendToDiscord(discordData);
+         })
+
         return NextResponse.redirect('http://localhost:3002/Completed');
 
     }
