@@ -21,10 +21,9 @@ enum statusPayment {
 }
 
 model Client {
-  userId    Int    @id @map("_id")
-  firstname String
-  lastname  String
-  phone     Int
+  userId    String    @id @map("_id")
+  fullname  String
+  phone     String
   email     String @unique
 }
 
@@ -37,7 +36,7 @@ model Admin {
 }
 
 model Payment {
-  id        Int           @id @map("_id")
+  id        String           @id @map("_id")
   amount    Float
   status    statusPayment
   createdAt DateTime      @default(now())
@@ -45,8 +44,8 @@ model Payment {
 
 model Ticket {
   ticketId  String @id @map("_id")
-  userId    Int?
-  paymentId Int?
+  userId    String?
+  paymentId String?
 
   type typeTicket
 

@@ -49,11 +49,11 @@ export async function POST(request: Request, response: Response) {
         "lifespan": 10,
         "checkoutForm": false,
         "addPaymentFeesToAmount": true,
-        "silentWebhook": true,
+        "silentWebhook": false,
       
-        "webhook": "https://merchant.tech/api/notification_payment",
-        "successUrl": "https://dev.konnect.network/gateway/payment-success",
-        "failUrl": "https://dev.konnect.network/gateway/payment-failure",
+        "webhook": `http://localhost:3002/api/notification_payment`,
+        "successUrl": "http://localhost:3002/Completed",
+        "failUrl": "https://dev.konnect.network/Error",
         
         "theme": "light"
       }
