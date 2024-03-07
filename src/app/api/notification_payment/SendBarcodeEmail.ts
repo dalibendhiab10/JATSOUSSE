@@ -25,7 +25,7 @@ export async function sendBarcodeEmail(recipientEmail: string, barcodeString: st
 
     // Set up the email content
     const mailOptions: nodemailer.SendMailOptions = {
-        from: 'acamar.org@gmail.com',
+        from: 'jat.sousse@gmail.com',
         to: recipientEmail,
         subject: `Confirmation de votre billet électronique N°${barcodeString} - "The 70s" - JAT Sousse`,
         html: `
@@ -112,8 +112,8 @@ export async function sendBarcodeEmail(recipientEmail: string, barcodeString: st
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-            user: 'acamar.org@gmail.com',
-            pass: 'ksqk mcnp eond qdop',
+            user: 'jat.sousse@gmail.com',
+            pass: 'tesy wepz hwkz rbzj',
         },
     });
 
