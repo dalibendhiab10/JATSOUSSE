@@ -68,23 +68,24 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
                     })
                 }
             })
+        }).then(async (response) => {
+            const discordData = {
+                embeds: [{
+                   title: datatoget?.payment.status === "completed" ? 'New Payment Received' : 'Payment',
+                   description: `Payment ID: ${datatoget?.payment.id},
+                                \nAmount: ${datatoget?.payment.amount}, 
+                                \nStatus: ${datatoget?.payment.status}`,
+                   fields: [{
+                     name: 'User Information',
+                     value: `User: ${datatoget?.payment.paymentDetails?.name}, 
+                        \nEmail: ${datatoget?.payment.paymentDetails?.email}`,
+                   }],
+                   color: datatoget?.payment.status === "completed" ? 65280 : 16711680, // Green for completed, Red for others
+                }]
+            };
+            // Send the data to Discord
+            await sendToDiscord(discordData);
         })
-        const discordData = {
-            embeds: [{
-               title: datatoget?.payment.status === "completed" ? 'New Payment Received' : 'Payment',
-               description: `Payment ID: ${datatoget?.payment.id},
-                            \nAmount: ${datatoget?.payment.amount}, 
-                            \nStatus: ${datatoget?.payment.status}`,
-               fields: [{
-                 name: 'User Information',
-                 value: `User: ${datatoget?.payment.paymentDetails?.name}, 
-                    \nEmail: ${datatoget?.payment.paymentDetails?.email}`,
-               }],
-               color: datatoget?.payment.status === "completed" ? 65280 : 16711680, // Green for completed, Red for others
-            }]
-        };
-        // Send the data to Discord
-        await sendToDiscord(discordData);
         return NextResponse.redirect(`${process?.env?.NEXT_URL_REDIRECT}/Completed`);
     }
     else{
@@ -105,23 +106,25 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
                     userId: uuidv4(),
                 }
             })
+        }).then(async (response) => {
+            const discordData = {
+                embeds: [{
+                   title: datatoget?.payment.status === "completed" ? 'New Payment Received' : 'Payment',
+                   description: `Payment ID: ${datatoget?.payment.id},
+                                \nAmount: ${datatoget?.payment.amount}, 
+                                \nStatus: ${datatoget?.payment.status}`,
+                   fields: [{
+                     name: 'User Information',
+                     value: `User: ${datatoget?.payment.paymentDetails?.name}, 
+                        \nEmail: ${datatoget?.payment.paymentDetails?.email}`,
+                   }],
+                   color: datatoget?.payment.status === "completed" ? 65280 : 16711680, // Green for completed, Red for others
+                }]
+            };
+            // Send the data to Discord
+            await sendToDiscord(discordData);
         })
-        const discordData = {
-            embeds: [{
-               title: datatoget?.payment.status === "completed" ? 'New Payment Received' : 'Payment',
-               description: `Payment ID: ${datatoget?.payment.id},
-                            \nAmount: ${datatoget?.payment.amount}, 
-                            \nStatus: ${datatoget?.payment.status}`,
-               fields: [{
-                 name: 'User Information',
-                 value: `User: ${datatoget?.payment.paymentDetails?.name}, 
-                    \nEmail: ${datatoget?.payment.paymentDetails?.email}`,
-               }],
-               color: datatoget?.payment.status === "completed" ? 65280 : 16711680, // Green for completed, Red for others
-            }]
-        };
-        // Send the data to Discord
-        await sendToDiscord(discordData);
+        
         return NextResponse.redirect(`${process?.env?.NEXT_URL_REDIRECT}/Error`);
 
     }
