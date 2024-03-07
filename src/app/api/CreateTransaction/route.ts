@@ -51,7 +51,7 @@ export async function POST(request: Request, response: Response) {
         "addPaymentFeesToAmount": true,
         "silentWebhook": false,
       
-        "webhook": `${process?.env?.PAYMENT_PREPROD_URL}/api/notification_payment`,
+        "webhook": `${process?.env?.NEXT_URL_REDIRECT}/api/notification_payment`,
         "successUrl": "http://localhost:3002/Completed",
         "failUrl": "https://dev.konnect.network/Error",
         
