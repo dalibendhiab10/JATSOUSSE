@@ -10,7 +10,7 @@ const ErrorArea = () => {
       ////make a countdown to 3 seconds and redirect to home page
       setTimeout(() => {
          window.location.href = "/70s"
-      }, 3000);
+      }, 5000);
    }
    )
    return (
@@ -20,7 +20,7 @@ const ErrorArea = () => {
                <div className="col-xl-3 col-lg-8 col-md-10">
                      <Image src={errorImg} alt="image" style={{width:"100%",height:"30%"}}/>
                   <div className="section-title pt-55 mb-50">
-                     <h2>Opps! This page not fund</h2>
+                     <h2>paiement a échoué</h2>
                      <p>votre paiement a échoué ,  
                         <br/> veuillez réessayer ou contacter le support
                         par <a href="mailto:bendhiabdali@gmail.com">email </a>ou par 
