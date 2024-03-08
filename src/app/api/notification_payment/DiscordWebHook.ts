@@ -4,9 +4,7 @@ const discordWebhookUrl = 'https://discord.com/api/webhooks/1215417549387333662/
 
 export async function sendToDiscord(data: any) {
  try {
-    const response = await axios.post(discordWebhookUrl, {
-      content: JSON.stringify(data),
-    });
+    const response = await axios.post(discordWebhookUrl, data);
     console.log('Message sent to Discord:', response.status);
  } catch (error) {
     console.error('Error sending message to Discord:', error);
