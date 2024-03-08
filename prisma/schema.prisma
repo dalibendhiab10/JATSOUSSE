@@ -53,6 +53,4 @@ model Ticket {
 
   isPaid Boolean
   isUsed Boolean
-
-  createdAt DateTime @default(now())
 }
