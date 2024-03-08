@@ -24,7 +24,7 @@ model Client {
   userId    String    @id @map("_id")
   fullname  String
   phone     String
-  email     String @unique
+  email     String  
 }
 
 model Admin {
