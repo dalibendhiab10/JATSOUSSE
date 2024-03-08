@@ -41,10 +41,9 @@ L'association vise à encadrer les jeunes artistes, affiner leurs talents, déve
 Aussi bien de soutenir la participation et l'efficacité des jeunes artistes dans la société civile et la vie publique et organiser des festivals et des événements artistiques, culturels et de citoyenneté et participer à des festivals, des concours et des compétitions artistiques, ainsi que des formations et des ateliers.
 
 Au  sein  de  l’association,  on  trouve  pratiquement  tous  les  domaines  et  les  disciplines  d'art  qui intéressent  les  jeunes  comme  la  musique,  la  poésie,  la  danse,  les  arts  plastiques, l'audiovisuel,  la  rédaction,  le  théâtre  et  le  cinéma"
-        >
-          <meta property="og:type" content="website" />
-          <meta property="og:image" content="https://i.imgur.com/a67V47y.png" />
-        </meta>
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://i.imgur.com/a67V47y.png" />
       </head>
       <body
         suppressHydrationWarning={true}
