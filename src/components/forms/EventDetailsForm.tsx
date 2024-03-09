@@ -129,13 +129,13 @@ const EventDetailsForm = () => {
         <div className="row">
           <div className="col-sm-6">
             <div className="form-group ">
-              <label htmlFor="prenom">Prenom</label>
+              <label htmlFor="prenom">Prénom</label>
               <input
                 type="text"
                 id="prenom"
                 {...register("prenom", { required: true })}
                 className="form-control input-70s"
-                placeholder="prenom"
+                placeholder="Prénom"
               />
               <p className="form_error">
                 {errors.prenom && "prenom est obligatoire !"}
@@ -159,7 +159,7 @@ const EventDetailsForm = () => {
           </div>
           <div className="col-sm-6">
             <div className="form-group">
-              <label htmlFor="email">Email.</label>
+              <label htmlFor="email">Email</label>
               <input
                 type="text"
                 id="email"
@@ -168,7 +168,7 @@ const EventDetailsForm = () => {
                   required: true,
                 })}
                 className="form-control input-70s"
-                placeholder="exp@jat.com"
+                placeholder="email@contact.com"
               />
               <p className="form_error">
               {errors.email && (errors.email.message ? String(errors.email.message) : "email est obligatoire")}
@@ -178,7 +178,7 @@ const EventDetailsForm = () => {
           </div>
           <div className="col-sm-6">
             <div className="form-group">
-              <label htmlFor="phone_number">Tel.</label>
+              <label htmlFor="phone_number">N° de Téléphone</label>
               <input
                 type="text"
                 id="phone_number"
@@ -187,7 +187,7 @@ const EventDetailsForm = () => {
                   required: true,
                 })}
                 className="form-control input-70s"
-                placeholder="Phone Number"
+                placeholder="N° de Téléphone"
               />
               <p className="form_error">
                 {errors.phone && (errors.phone.message ? String(errors.phone.message) : "Tel est obligatoire")}

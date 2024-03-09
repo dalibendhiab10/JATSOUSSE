@@ -10,15 +10,15 @@ const EventDetailsSidebar = () => {
     <div className="col-lg-4">
       <div className="main-sidebar event-sidebar rmt-75">
         <div className="widget widget-event-info">
-          {/* <h5 className="widget-title">Event Info</h5> */}
+          <h5 className="widget-title">Informations</h5>
           <ul>
             <li>
               <div className="icon">
                 <i className="fa fa-calendar-alt"></i>
               </div>{" "}
               <div className="content" style={{ color: "black" }}>
-                <h6>Date & Heures</h6>
-                <span>31 december,2022 11:00am - 3:00pm</span>
+                <h6>Date & Heure</h6>
+                <span>17 Mars 2024 21H30</span>
               </div>
             </li>
             <li>
@@ -40,8 +40,9 @@ const EventDetailsSidebar = () => {
                 <h6>Infoline</h6>
                 <span style={{ color: "black" }}>
                   93 158 643 <br />
-                  93 158 643 <br />
-                  93 158 643 <br />
+                  20 477 247 <br />
+                  50 545 236 <br />
+                  25 331 965 <br />
                 </span>
               </div>
             </li>
