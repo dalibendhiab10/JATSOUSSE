@@ -29,9 +29,8 @@ model Client {
 
 model Admin {
   adminId   Int    @id @map("_id")
-  firstname String
-  lastname  String
-  email     String @unique
+  fullname String
+  username     String @unique
   password  String
 }
 

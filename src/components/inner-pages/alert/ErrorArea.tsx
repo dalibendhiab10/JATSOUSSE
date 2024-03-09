@@ -10,7 +10,7 @@ const ErrorArea = () => {
       ////make a countdown to 3 seconds and redirect to home page
       setTimeout(() => {
          window.location.href = "/70s"
-      }, 5000);
+      }, 10000);
    }
    )
    return (
