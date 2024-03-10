@@ -8,7 +8,16 @@ const ScanBarcodePage = () => {
   const [result, setResult] = useState("");
   const [data, setData] = React.useState("Not Found");
 
- 
+    const handleScan = (err:any,data: any) => {
+        if (result){
+
+            alert(data);
+            setResult(data);
+        }
+        else{
+            alert(err)
+        }
+    }
   return (
     <>
     <div>
@@ -17,8 +26,7 @@ const ScanBarcodePage = () => {
         width={500}
         height={500}
         onUpdate={(err, result) => {
-          if (result) setData(result.getText());
-          else setData("Not Found");
+            handleScan(err,result?.getText())
         }}
       />
       <p>{data}</p>
