@@ -14,8 +14,15 @@ const ScanBarcodePage = () => {
         width={500}
         height={500}
         onUpdate={(err, result) => {
-          if (result) setData(result.getText());
-          else setData("Not Found");
+          if (result) {
+            setData(result.getText());
+            alert(result.getText());
+          }
+          
+          else {
+            setData("Not Found");
+            alert(err)
+          };
         }}
       />
       <p>{data}</p>
