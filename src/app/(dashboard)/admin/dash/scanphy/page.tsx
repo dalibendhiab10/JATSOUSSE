@@ -21,7 +21,6 @@ const ScanBarcodePage = () => {
           
           else {
             setData("Not Found");
-            alert(err)
           };
         }}
       />
