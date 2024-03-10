@@ -14,7 +14,7 @@ interface ContentType {
 }
 
 const content_data: ContentType = {
-  title_1: "THE 70s : A sympohony of Decades",
+  title_1: "THE 70's : A Symphony Of Decades",
   title_2: "",
   desc_1: (
     <>
