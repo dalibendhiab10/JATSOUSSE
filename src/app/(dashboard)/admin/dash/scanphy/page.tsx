@@ -16,7 +16,7 @@ const ScanBarcodePage = () => {
         onUpdate={(err, result) => {
           if (result) {
             setData(result.getText());
-            alert(result.getText());
+            alert(result);
           }
           
           else {
