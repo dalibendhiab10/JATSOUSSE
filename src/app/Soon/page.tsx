@@ -2,7 +2,7 @@
 import Wrapper from "@/layout/Wrapper";
 import dynamic from "next/dynamic";
 
-const NoSSR = dynamic(() => import("@/components/Countdown"), { ssr: false });
+const NoSSR = dynamic(() => import("@/components/CountDown"), { ssr: false });
 /// dali test
 const Soon = () => {
   return (
