@@ -6,7 +6,7 @@ export const metadata = {
   title: "JAT SOUSSE | Accueil",
 };
 const index = () => {
-  return redirect('/70s') 
+  return redirect('/Soon') 
 
 }
 

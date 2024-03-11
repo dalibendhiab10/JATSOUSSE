@@ -1,30 +1,17 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { signIn } from 'next-auth/react'
 
 const Login = () => {
   const router = useRouter();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  
   const handleLogin = async () => {
-    const response = await fetch("/api/signin", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    });
+    signIn('credentials', { email: username, password: password, callbackUrl: '/admin/dash' })
 
-    const data = await response.json();
-
-    if (data.success) {
-      router.push("/admin/dash/"); // Redirect to dashboard if login is successful
-    } else {
-      // Handle login failure, e.g., show an error message
-      alert("Login failed");
-    }
   };
 
   return (
