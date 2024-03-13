@@ -6,11 +6,6 @@ import bcrypt from 'bcryptjs';
 
 const prisma = new PrismaClient();
 
-interface Credentials {
- username: string;
- password: string;
-}
-
 interface UserWithRole extends User {
   role?: string;
  }
