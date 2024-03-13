@@ -75,6 +75,19 @@ export default function RootLayout({
                     </Link>
                     
                   </li>
+                  <li>
+                    <Link
+                     
+                     href="/admin/dash/sellphy"                     
+                      className="nav-link px-0 align-middle"
+                    >
+                      <i >
+
+                        </i>{" "}
+                      <span className="ms-1 d-none d-sm-inline text-white">SELL Physical Ticket</span>{" "}
+                    </Link>
+                    
+                  </li>
                 </ul>
               </div>
             </div>

@@ -69,5 +69,5 @@ export async function POST(req: NextRequest, res: NextResponse) {
             };
         await sendToDiscord(discordData);
     })
-    return NextResponse.json({ success: true, message: "200" });
+    return NextResponse.json({ success: true, message: "Ticket Sold Successfully" });
 }
