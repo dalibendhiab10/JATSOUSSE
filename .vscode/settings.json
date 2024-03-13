@@ -1,5 +1,6 @@
 {
     "prisma-smart-formatter.prisma.defaultFormatter": "ajmnz.prisma-import",
     "WillLuke.nextjs.addTypesOnSave": true,
-    "WillLuke.nextjs.hasPrompted": true
+    "WillLuke.nextjs.hasPrompted": true,
+    "prisma-smart-formatter.typescriptreact.defaultFormatter": "esbenp.prettier-vscode"
 }

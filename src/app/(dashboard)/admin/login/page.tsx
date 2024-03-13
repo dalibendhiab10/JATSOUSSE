@@ -10,7 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   
   const handleLogin = async () => {
-    signIn('credentials', { email: username, password: password, callbackUrl: '/admin/dash' })
+    signIn('credentials', { username: username, password: password, callbackUrl: '/admin/dash' })
 
   };
 
@@ -40,15 +40,15 @@ const Login = () => {
                         <input
                           type="text"
                           className="form-control"
-                          name="email"
-                          id="email"
+                          name="username"
+                          id="username"
                           placeholder="name"
                           required
                           onChange={(e) => {
                             setUsername(e.target.value);
                           }}
                         />
-                        <label className="form-label">Email</label>
+                        <label className="form-label">Username</label>
                       </div>
                     </div>
                     <div className="col-12">

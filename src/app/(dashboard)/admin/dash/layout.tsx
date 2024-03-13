@@ -49,6 +49,32 @@ export default function RootLayout({
                     </Link>
                     
                   </li>
+                  <li>
+                    <Link
+                     
+                     href="/admin/dash/listeticket"                     
+                      className="nav-link px-0 align-middle"
+                    >
+                      <i >
+
+                        </i>{" "}
+                      <span className="ms-1 d-none d-sm-inline text-white">E-Tickets Payments</span>{" "}
+                    </Link>
+                    
+                  </li>
+                  <li>
+                    <Link
+                     
+                     href="/admin/dash/listptickets"                     
+                      className="nav-link px-0 align-middle"
+                    >
+                      <i >
+
+                        </i>{" "}
+                      <span className="ms-1 d-none d-sm-inline text-white">Physical Tickets</span>{" "}
+                    </Link>
+                    
+                  </li>
                 </ul>
               </div>
             </div>
