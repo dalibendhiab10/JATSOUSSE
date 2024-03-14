@@ -39,19 +39,19 @@ function TicketTable() {
         isUsed: false,
     });
 
-    const loadData = async () => {
-        try {
-            const response = await axios.post('/api/getPtickets');
-            console.log(response.data);
-            setTickets(response.data.data); // Assuming the data you want is in response.data.data
-        } catch (error) {
-            console.log(error);
-        }
-    };
+    // const loadData = async () => {
+    //     try {
+    //         const response = await axios.post('/api/getPtickets');
+    //         console.log(response.data);
+    //         setTickets(response.data.data); // Assuming the data you want is in response.data.data
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
 
-    useEffect(() => {
-        loadData();
-    }, []);
+    // useEffect(() => {
+    //     loadData();
+    // }, []);
 
     const filteredTickets = tickets.filter((ticket) => {
         return (
