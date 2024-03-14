@@ -28,7 +28,7 @@ model Client {
 }
 
 model Admin {
-  adminId   Int    @id @map("_id")
+  adminId   Int    @id @map("_id") 
   fullname String
   username     String @unique
   password  String
