@@ -10,7 +10,7 @@ interface Ticket {
     paymentId: string | null;
     soldBy: string | null;
     scannedBy: string | null;
-    type: $Enums.typeTicket | null;
+    type: "physical" | null;
     isPaid: boolean;
     isUsed: boolean;
 }
@@ -21,7 +21,7 @@ interface FilterState {
     paymentId: string;
     soldBy: string;
     scannedBy: string;
-    type: $Enums.typeTicket;
+    type: "physical";
     isPaid: boolean;
     isUsed: boolean;
 }
@@ -34,7 +34,7 @@ function TicketTable() {
         paymentId: '',
         soldBy: '',
         scannedBy: '',
-        type: $Enums.typeTicket.physical,
+        type: "physical",
         isPaid: false,
         isUsed: false,
     });
