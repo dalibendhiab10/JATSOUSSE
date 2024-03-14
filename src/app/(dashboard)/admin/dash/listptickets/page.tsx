@@ -5,23 +5,23 @@ import { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 
 interface Ticket {
-    _id: string;
+    ticketId: string;
     userId: string | null;
     paymentId: string | null;
     soldBy: string | null;
     scannedBy: string | null;
-    type: "physical" | null;
+    type: typeof $Enums.typeTicket.physical | null;
     isPaid: boolean;
     isUsed: boolean;
 }
 
 interface FilterState {
-    _id: string;
+    ticketId: string;
     userId: string;
     paymentId: string;
     soldBy: string;
     scannedBy: string;
-    type: "physical";
+    type: typeof $Enums.typeTicket.physical;
     isPaid: boolean;
     isUsed: boolean;
 }
@@ -29,7 +29,7 @@ interface FilterState {
 function TicketTable() {
     const [tickets, setTickets] = useState<Ticket[]>([]);
     const [filters, setFilters] = useState<FilterState>({
-        _id: '',
+        ticketId: '',
         userId: '',
         paymentId: '',
         soldBy: '',
@@ -55,7 +55,7 @@ function TicketTable() {
 
     const filteredTickets = tickets.filter((ticket) => {
         return (
-            (filters._id ? ticket._id.includes(filters._id) : true) &&
+            (filters.ticketId ? ticket.ticketId.includes(filters.ticketId) : true) &&
             (filters.userId ? ticket.userId?.includes(filters.userId) : true) &&
             (filters.paymentId ? ticket.paymentId?.includes(filters.paymentId) : true) &&
             (filters.soldBy ? ticket.soldBy?.includes(filters.soldBy) : true) &&
@@ -72,8 +72,8 @@ function TicketTable() {
                 <input
                     type="text"
                     placeholder="Ticket ID"
-                    value={filters._id}
-                    onChange={(e) => setFilters({ ...filters, _id: e.target.value })}
+                    value={filters.ticketId}
+                    onChange={(e) => setFilters({ ...filters, ticketId: e.target.value })}
                 />
                 {/* Repeat for other filters */}
                 <input
@@ -133,8 +133,8 @@ function TicketTable() {
                 </thead>
                 <tbody>
                     {filteredTickets.map((ticket, index) => (
-                        <tr key={ticket._id}>
-                            <td>{ticket._id}</td>
+                        <tr key={ticket.ticketId}>
+                            <td>{ticket.ticketId}</td>
                             <td>{ticket.userId}</td>
                             <td>{ticket.paymentId}</td>
                             <td>{ticket.soldBy}</td>
