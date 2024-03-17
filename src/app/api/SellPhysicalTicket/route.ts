@@ -18,7 +18,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
         if (ticket?.isPaid && !ticket?.isUsed) {
             const discordData = {
                 embeds: [{
-                   title: 'Physical Ticket Is Already Sold',
+                   title: 'Physical Ticket Is Already Sold AND NOT USED',
                    description: `Ticket ID: ${ticket?.ticketId}`,
                    fields: [{
                      name: 'Vendor Information',
@@ -28,7 +28,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
                 }]
             };
         await sendToDiscord(discordData);
-            return NextResponse.json({ success: true, message: "Ticket is already sold" });
+            return NextResponse.json({ success: true, message: "Ticket is already sold and not used" });
         } else if (ticket?.isUsed && ticket?.isPaid) {
             const discordData = {
                 embeds: [{
@@ -53,7 +53,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
             },
             data: {
                 isPaid: true,
-                soldBy: body.adminId,
+                soldBy: "266946" ,
             }
         }).then(async (ticket) => {
             const discordData = {

@@ -8,7 +8,7 @@ const ScanBarcodePage = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const response = await fetch('/api/ScanTicket', {
+        const response = await fetch('/api/SellPhysicalTicket', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -17,12 +17,15 @@ const ScanBarcodePage = () => {
         });
         const result = await response.json();
         setData(result.message);
+        alert(result.message);
+        setTicketId("");
+
     };
 
     return (
         <>
             <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-                <h1 className="text-4xl font-bold mb-8">Scan Barcode</h1>
+                <h1 className="text-4xl font-bold mb-8">SELL PHYSICAL</h1>
                 <form onSubmit={handleSubmit} className="w-full max-w-md">
                     <div className="mb-4">
                         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="ticketId">

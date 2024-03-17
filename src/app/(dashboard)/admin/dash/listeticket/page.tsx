@@ -13,19 +13,19 @@ interface Payment {
 function PaymentTable() {
  const [payments, setPayments] = useState<Payment[]>([]);
 
-//  const loadData = async () => {
-//     try {
-//       const response = await axios.post('/api/getEtickets');
-//       console.log(response.data);
-//       setPayments(response.data.data); // Assuming the data you want is in response.data.data
-//     } catch (error) {
-//       console.log(error);
-//     }
-//  };
+ const loadData = async () => {
+    try {
+      const response = await axios.post('/api/getEtickets');
+      console.log(response.data);
+      setPayments(response.data.data); // Assuming the data you want is in response.data.data
+    } catch (error) {
+      console.log(error);
+    }
+ };
 
-//  useEffect(() => {
-//     loadData();
-//  }, []);
+ useEffect(() => {
+    loadData();
+ }, []);
 
  return (
     <Table striped bordered hover>
