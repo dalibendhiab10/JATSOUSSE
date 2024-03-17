@@ -3,7 +3,7 @@ import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function GET(req: NextRequest, res: NextResponse) {
 
         const total_tickets_sold = await prisma.ticket.count({
             where:{
@@ -25,18 +25,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
             }
         });
 
-        const stats_per_vendor = await prisma.ticket.groupBy({
-            by: ['soldBy'],
-            _count: {
-                // To count the total number of tickets sold by each vendor:
-                _all: true,
-            },
-            where: {
-                type: {
-                    in: ["physical", "etick"],
-                },
-            },
-        });
 
-    return NextResponse.json({total_tickets_sold, physical_tickets_sold, e_tickets_sold, stats_per_vendor});
+    return NextResponse.json({total : (total_tickets_sold*10), physical_tickets_sold, e_tickets_sold,total_tickets_sold });
 }
