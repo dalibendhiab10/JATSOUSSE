@@ -6,17 +6,16 @@ import { useEffect, useRef, useState } from 'react';
 const ClientProtectPage = () => {
 
 
-  const handleScan = (data) => {
-    console.log(data);
+  const handleScan = (data:string) => {
     if (data) {
       console.log('Scanned QR code:', data);
       // Handle the scanned QR code data
-      fetch('/api/protected/scan', {
+      fetch('/api/ScanTicket', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ ticketid: data }),
+        body: JSON.stringify({ ticketId: data }),
       })
         .then((res) => res.json())
         .then((json) => {
@@ -32,7 +31,7 @@ const ClientProtectPage = () => {
       <QrScanner
         onDecode={(result) => handleScan(result)}
         onError={(error) => console.log(error?.message)}
-        style={{ width: '100%' }}
+        videoStyle={{ width: '100%' }}
         scanDelay={3000}
       />
     </div>
