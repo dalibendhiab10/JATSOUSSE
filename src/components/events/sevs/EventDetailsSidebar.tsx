@@ -18,7 +18,7 @@ const EventDetailsSidebar = () => {
               </div>{" "}
               <div className="content" style={{ color: "black" }}>
                 <h6>Date & Heure</h6>
-                <span>17 Mars 2024 21H30</span>
+                <span>25 Janvier 2025 18h00</span>
               </div>
             </li>
             <li>
@@ -43,6 +43,8 @@ const EventDetailsSidebar = () => {
                   20 477 247 <br />
                   50 545 236 <br />
                   25 331 965 <br />
+                  27 404 152 <br />
+
                 </span>
               </div>
             </li>

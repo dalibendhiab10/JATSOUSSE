@@ -46,7 +46,7 @@ export default function RootLayout({
                     
                   </li>
                 <li>
-                  <Link
+                  {/* <Link
 
                     href="/admin/dash/scanphys"
                     className="nav-link px-0 align-middle"
@@ -62,7 +62,7 @@ export default function RootLayout({
                       </svg>
                     </i>{" "}
                     <span className="ms-1 d-none d-sm-inline text-white">SELL Physical Ticket</span>{" "}
-                  </Link>
+                  </Link> */}
 
                 </li>
                 <li>
@@ -84,7 +84,7 @@ export default function RootLayout({
                   </Link>
 
                 </li>
-                <li>
+                {/* <li>
                   <Link
 
                     href="/admin/dash/listptickets"
@@ -99,7 +99,7 @@ export default function RootLayout({
                     <span className="ms-1 d-none d-sm-inline text-white">Physical Tickets</span>{" "}
                   </Link>
 
-                </li>
+                </li> */}
 
               </ul>
             </div>

@@ -21,7 +21,7 @@ enum statusPayment {
 }
 
 model Client {
-  userId   String @id @map("_id")
+  userId   String @id @map("_id") 
   fullname String
   phone    String
   email    String

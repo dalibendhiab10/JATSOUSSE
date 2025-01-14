@@ -1091,8 +1091,8 @@ ul li {
   z-index: -1;
   top: 0;
   left: 0;
-  opacity: 0.77;
-  background-color: black;
+  opacity: 0.40;
+  background-color: #916c2b;
 }
 
 /*-----------------------------------------

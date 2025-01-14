@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="description" content="JAT SOUSSE - THE 70S " />
+        <meta name="description" content="JAT SOUSSE - مڨياسnp " />
         <link rel="icon" href="/favicon.png" sizes="any" />
         <meta property="og:title" content="JAT SOUSSE" />
         <meta property="og:site_name" content="JAT SOUSSE" />

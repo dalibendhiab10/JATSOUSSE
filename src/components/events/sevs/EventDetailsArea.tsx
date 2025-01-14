@@ -18,17 +18,18 @@ const content_data: ContentType = {
   title_2: "",
   desc_1: (
     <>
-
-        The 70s, aura lieu en mars 2024 au théâtre municipal de Sousse. C’est la
-        deuxième étape du projet. L&apos;Association des Jeunes Artistes
-        Tunisiens va célébrer cette période flamboyante avec un spectacle rétro.
-
+      Megyes aura lieu en Janvier 2024 au théâtre municipal de Sousse.L&apos;Association des Jeunes Artistes
+      Tunisiens Sousse mettra en valeur notre patrimoine à travers un spectacle tunisien.
       <br />
       <br />
 
-        Plongez dans une expérience sensorielle inoubliable où la musique
-        emblématique des années 70 résonnera dans une atmosphère soigneusement
-        arrangée.
+      Plongez dans une expérience captivante où la richesse de notre patrimoine tunisien prendra vie à travers des performances artistiques authentiques et une ambiance magnifiquement mise en scène.
+
+
+
+
+
+
 
     </>
   ),
@@ -60,7 +61,7 @@ const EventDetailsArea = () => {
                 ))}
               </ul> */}
             </div>
-            
+
             <h5 className="widget-title">ACHETEZ VOS TICKETS !</h5>
             <EventDetailsForm />
           </div>

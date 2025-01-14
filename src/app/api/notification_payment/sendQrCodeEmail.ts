@@ -1,32 +1,30 @@
 // Import necessary modules
 import { createCanvas } from 'canvas';
 import nodemailer from 'nodemailer';
-import JsBarcode from 'jsbarcode';
+import QRCode from 'qrcode';
 import path from 'path';
 import fs from 'fs';
 
-// Function to generate barcode and send email
-export async function sendBarcodeEmail(recipientEmail: string, barcodeString: string, fullname: string) {
-    // Create a canvas
-    const canvas = createCanvas(400, 100);
-    // Generate barcode onto the canvas using JsBarcode
-    JsBarcode(canvas, barcodeString, {
-        format: 'CODE128',
-        width: 2,
-        height: 40,
-        displayValue: false // Disable the display of the barcode value
+// Function to generate QR code and send email
+export async function sendQrCodeEmail(recipientEmail:string, qrCodeString:string, fullname:string) {
+    // Generate QR code
+    const qrCodeImagePath = path.join(__dirname, 'qrcode.png');
+    const qrCodeCanvas = createCanvas(400, 400);
+
+    await QRCode.toCanvas(qrCodeCanvas, qrCodeString, {
+        width: 400,
+        margin: 2,
     });
 
-    // Save the barcode image
-    const barcodeImagePath = path.join(__dirname, 'barcode.png');
-    const buffer = canvas.toBuffer('image/png');
-    fs.writeFileSync(barcodeImagePath, buffer);
+    // Save the QR code image
+    const buffer = qrCodeCanvas.toBuffer('image/png');
+    fs.writeFileSync(qrCodeImagePath, buffer);
 
     // Set up the email content
-    const mailOptions: nodemailer.SendMailOptions = {
+    const mailOptions = {
         from: 'jat.sousse@gmail.com',
         to: recipientEmail,
-        subject: `Confirmation de votre billet électronique N°${barcodeString} - "The 70s" - JAT Sousse`,
+        subject: `Confirmation de votre billet électronique N°${qrCodeString} - "Megyes" - JAT Sousse`,
         html: `
         <!DOCTYPE html>
 <html lang="en">
@@ -49,20 +47,20 @@ export async function sendBarcodeEmail(recipientEmail: string, barcodeString: st
         style="max-width:550px; min-width:320px;  background-color: white; border: 1px solid #DDDDDD; margin-right: auto; margin-left: auto;">
         <div style="margin-left:30px;margin-right:30px">
             <p>&nbsp;</p>
-            <p><img src="https://i.imgur.com/ZZLI6yB.png"></p>
+            <p><img src="https://i.imgur.com/1wh1uaN.png"></p>
             <hr style="margin-top:10px;margin-bottom:65px;border:none;border-bottom:1px solid black" />
             <h3 style="font-family:poppins ;font-weight:500">Cher(e) ${fullname}</h3>
             <p
                 style="font-family:poppins;font-size: 15px; margin-left: auto; margin-right: auto; text-align: justify;color: #666;line-height:1.5;">
                 Nous vous remercions d'avoir choisi notre plateforme de vente de billets en ligne pour réserver vos
-                places pour le spectacle "The 70's: A Symphony of Decades", présenté par l'Association des Jeunes
+                places pour le spectacle "Megyes", présenté par l'Association des Jeunes
                 Artistes Tunisiens Sousse.
                 <br /><br />
                 Voici un récapitulatif de votre achat :
                 <br />
-                Spectacle : <a style=" color: black ; font-weight:bold"> "The 70's: A Symphony of Decades"</a><br />
-                Date : <a style=" color: black ; font-weight:bold"> 17 Mars 2024</a><br />
-                Heure : <a style=" color: black ; font-weight:bold"> 21h30</a><br />
+                Spectacle : <a style=" color: black ; font-weight:bold"> "Megyes"</a><br />
+                Date : <a style=" color: black ; font-weight:bold"> 25 Janvier 2025</a><br />
+                Heure : <a style=" color: black ; font-weight:bold"> 18h00</a><br />
                 Lieu : <a style=" color: black ; font-weight:bold"> Théâtre Municipal de Sousse</a>
                 <br><br>
 
@@ -73,8 +71,8 @@ export async function sendBarcodeEmail(recipientEmail: string, barcodeString: st
             </table>
             <p
                 style="font-family: poppins, sans-serif; font-weight: normal; color: #2A2A2A; text-align: center; ;font-size: 20px; letter-spacing: 6px;font-weight: normal; border: 2px solid black; padding: 15px;">
-                <img src="cid:barcodeImage" alt="Barcode" />
-                ${barcodeString}
+                <img src="cid:qrCodeImage" alt="QR Code" />
+                ${qrCodeString}
             </p>
             <p
                 style="font-family:poppins;font-size: 15px; margin-left: auto; margin-right: auto; text-align: justify;color: #666;line-height:1.5;">
@@ -82,7 +80,7 @@ export async function sendBarcodeEmail(recipientEmail: string, barcodeString: st
 
                 Si vous avez des questions ou des préoccupations, n'hésitez pas à nous contacter à <a
                     href="mailto:jat.sousse@gmail.com"> notre Email</a> ou par <a
-                    href="tel:+216 39 158 643">téléphone</a>.
+                    href="tel:+216 93 158 643">téléphone</a>.
                 <br><br>Cordialement,
                 <br>L'équipe de JAT Sousse
             </p>
@@ -96,12 +94,11 @@ export async function sendBarcodeEmail(recipientEmail: string, barcodeString: st
 </body>
 
 </html>
-        `
-        ,
+        `,
         attachments: [{
-            filename: 'barcode.png',
+            filename: 'qrcode.png',
             content: buffer,
-            cid: 'barcodeImage' // Content ID for embedding the image in HTML
+            cid: 'qrCodeImage' // Content ID for embedding the image in HTML
         }]
     };
 
@@ -112,7 +109,7 @@ export async function sendBarcodeEmail(recipientEmail: string, barcodeString: st
         secure: false, // true for 465, false for other ports
         auth: {
             user: 'jat.sousse@gmail.com',
-            pass: 'tesy wepz hwkz rbzj',
+            pass: process?.env?.GMAIL_PASSWORD,
         },
     });
 
@@ -128,9 +125,3 @@ export async function sendBarcodeEmail(recipientEmail: string, barcodeString: st
     });
 }
 
-/*export async function POST(request: Request, response: Response) {
-    // Generate barcode and send email
-    await sendBarcodeEmail('kaltisami@gmail.com', '1234567890128','Sami Kalti');
-
-    return NextResponse.json({ success: true, message: "Barcode created and email sent" });
-}*/

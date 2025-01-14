@@ -15,7 +15,6 @@ const Sevs = () => {
          
             <The70s  />
             <EventDetailsArea/>
-            {/* <Brand style={false} /> */}
             
          </main>
          </GoogleCaptchaWrapper>

@@ -31,7 +31,7 @@ export async function POST(request: Request, response: Response) {
     const body = 
       {
         "amount": (10000*Qte),
-        "description": `THE 70s : A SYMPHONY OF DECADES | paiement de ${Qte} Tickets`,
+        "description": `مڨياس | paiement de ${Qte} Tickets`,
         "firstName": FirstName,
         "lastName": LastName,
         "phoneNumber": Phone,
@@ -46,14 +46,14 @@ export async function POST(request: Request, response: Response) {
           "bank_card",
           "e-DINAR",
         ],
-        "lifespan": 10,
+        "lifespan": 20,
         "checkoutForm": false,
         "addPaymentFeesToAmount": true,
         "silentWebhook": false,
       
         "webhook": `${process?.env?.NEXT_URL_REDIRECT}/api/notification_payment`,
-        "successUrl": "http://localhost:3002/Completed",
-        "failUrl": "https://dev.konnect.network/Error",
+        "successUrl":`${process?.env?.NEXT_URL_REDIRECT}/Completed`,
+        "failUrl": `${process?.env?.NEXT_URL_REDIRECT}/Error`,
         
         "theme": "light"
       }

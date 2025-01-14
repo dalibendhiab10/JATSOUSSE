@@ -1,5 +1,5 @@
 import { NextRequest,NextResponse } from 'next/server';
-import {sendBarcodeEmail} from './SendBarcodeEmail';
+import {sendQrCodeEmail} from './sendQrCodeEmail';
 import { PrismaClient } from '@prisma/client';
 import { v4 as uuidv4 } from 'uuid';
 import {sendToDiscord} from './DiscordWebHook';
@@ -64,7 +64,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
                             type: "etick"
                         }
                     }).then(async (response) => {
-                        sendBarcodeEmail(datatoget?.payment.paymentDetails?.email, ticketId, datatoget?.payment.paymentDetails?.name)
+                        sendQrCodeEmail(datatoget?.payment.paymentDetails?.email, ticketId, datatoget?.payment.paymentDetails?.name)
                     })
                 }
             })
