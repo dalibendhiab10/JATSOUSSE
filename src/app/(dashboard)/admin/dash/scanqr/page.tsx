@@ -15,7 +15,7 @@ const ClientProtectPage = () => {
 
   const scannerRef = useRef(null);
   const [isScanned, setIsScanned] = useState(false);
-  
+
   const handleScan = (data: string) => {
     if (data && !isScanned) {
       console.log('Scanned QR code:', data);
@@ -35,7 +35,7 @@ const ClientProtectPage = () => {
         .then((res) => res.json())
         .then((json) => {
           alert(json.message);
-          window.location.reload();
+          
         });
     }
   };
