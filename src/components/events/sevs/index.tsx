@@ -11,11 +11,11 @@ const Sevs = () => {
 
          {/* <HeaderOne /> */}
          <GoogleCaptchaWrapper>
-         <main>
+         <main >
          
             <The70s  />
             <EventDetailsArea/>
-            
+
          </main>
          </GoogleCaptchaWrapper>
          {/* <FooterOne /> */}

@@ -1,15 +1,14 @@
-import Image from "next/image";
-import Link from "next/link";
 
-import ppcomingEventImg_1 from "@/assets/img/widgets/event1.jpg";
-import ppcomingEventImg_2 from "@/assets/img/widgets/event2.jpg";
-import EventDetailsForm from "@/components/forms/EventDetailsForm";
 
 const EventDetailsSidebar = () => {
   return (
     <div className="col-lg-4">
+
+
       <div className="main-sidebar event-sidebar rmt-75">
-        <div className="widget widget-event-info">
+
+      <div className="widget widget-event-info">
+        
           <h5 className="widget-title">Informations</h5>
           <ul>
             <li>

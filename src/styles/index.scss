@@ -282,3 +282,42 @@
     border-radius: 8px;
     overflow: hidden;
   }
+
+
+  .call-to-action {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40vw; /* Default for medium and large screens */
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Hover effect */
+  .call-to-action:hover {
+    background-color: #e55a5a;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .call-to-action {
+      width: 50vw; /* Wider button on smaller screens */
+      font-size: 14px; /* Slightly smaller font size */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .call-to-action {
+      width: 70vw; /* Adjust for very small screens */
+      font-size: 12px; /* Smaller font size */
+    }
+  }
