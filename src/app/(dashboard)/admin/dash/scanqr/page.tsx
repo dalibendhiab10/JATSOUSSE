@@ -33,9 +33,8 @@ const ClientProtectPage = () => {
       })
         .then((res) => res.json())
         .then((json) => {
-          alert(json.message).then(() => {
-            setIsScanned(false);
-          })
+          alert(json.message)
+          setIsScanned(false);
         });
     }
   };
