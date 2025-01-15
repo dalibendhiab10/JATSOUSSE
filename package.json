@@ -38,6 +38,7 @@
     "react-dom": "^18",
     "react-google-recaptcha-v3": "^1.10.1",
     "react-hook-form": "^7.48.2",
+    "react-icons": "^5.4.0",
     "react-intersection-observer": "^9.5.3",
     "react-modal-video": "^2.0.1",
     "react-qr-barcode-scanner": "^1.0.6",
