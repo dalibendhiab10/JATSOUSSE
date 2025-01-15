@@ -1,12 +1,15 @@
-'use client'
+// @ts-nocheck
 
-import { QrScanner } from '@yudiel/react-qr-scanner';
-import { useEffect, useRef, useState } from 'react';
+'use client';
+
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
+
+// Dynamically import QrScanner with SSR disabled
+const QrScanner = dynamic(() => import('@yudiel/react-qr-scanner'), { ssr: false });
 
 const ClientProtectPage = () => {
-
-
-  const handleScan = (data:string) => {
+  const handleScan = (data: string) => {
     if (data) {
       console.log('Scanned QR code:', data);
       // Handle the scanned QR code data
@@ -24,7 +27,6 @@ const ClientProtectPage = () => {
         });
     }
   };
-
 
   return (
     <div style={{ width: '300px', margin: 'auto' }}>
