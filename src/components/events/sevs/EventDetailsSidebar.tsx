@@ -37,7 +37,8 @@ const EventDetailsSidebar = () => {
                 <i className="fa fa-phone-alt"></i>
               </div>{" "}
               <div className="content">
-                <h6>Infoline</h6>
+                <h6>Pour des Tickets Physiques Infoline
+                </h6>
                 <span style={{ color: "black" }}>
                   93 158 643 <br />
                   20 477 247 <br />
