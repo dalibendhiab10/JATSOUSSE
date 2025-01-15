@@ -9,7 +9,7 @@ const ErrorArea = () => {
   {
     useEffect(() => {
       setTimeout(() => {
-        window.location.href = "/70s";
+        window.location.href = "/";
       }, 3000);
     });
     return (

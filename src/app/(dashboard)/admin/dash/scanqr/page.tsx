@@ -3,16 +3,28 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useState } from 'react';
+import { useState,useRef } from 'react';
 
 // Dynamically import QrScanner with SSR disabled
-const QrScanner = dynamic(() => import('@yudiel/react-qr-scanner'), { ssr: false });
+const QrScanner = dynamic(
+  () => import('@yudiel/react-qr-scanner').then(mod => mod.QrScanner), // Access the named export
+  { ssr: false }
+);
 
 const ClientProtectPage = () => {
+
+  const scannerRef = useRef(null);
+  const [isScanned, setIsScanned] = useState(false);
+  
   const handleScan = (data: string) => {
-    if (data) {
+    if (data && !isScanned) {
       console.log('Scanned QR code:', data);
-      // Handle the scanned QR code data
+      setIsScanned(true);
+
+      if (scannerRef.current && scannerRef.current.stop) {
+        scannerRef.current.stop();
+      }
+
       fetch('/api/ScanTicket', {
         method: 'POST',
         headers: {
@@ -30,12 +42,16 @@ const ClientProtectPage = () => {
 
   return (
     <div style={{ width: '300px', margin: 'auto' }}>
-      <QrScanner
-        onDecode={(result) => handleScan(result)}
-        onError={(error) => console.log(error?.message)}
-        videoStyle={{ width: '100%' }}
-        scanDelay={3000}
-      />
+      {!isScanned && (
+        <QrScanner
+          ref={scannerRef} // Attach a ref to the scanner
+          onDecode={(result) => handleScan(result)}
+          onError={(error) => console.log(error?.message)}
+          videoStyle={{ width: '100%' }}
+          scanDelay={3000}
+        />
+      )}
+      {isScanned && <p>QR code scanned successfully!</p>}
     </div>
   );
 };

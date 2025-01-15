@@ -43,7 +43,7 @@ export default function RootLayout({
             Au  sein  de  l’association,  on  trouve  pratiquement  tous  les  domaines  et  les  disciplines  d'art  qui intéressent  les  jeunes  comme  la  musique,  la  poésie,  la  danse,  les  arts  plastiques, l'audiovisuel,  la  rédaction,  le  théâtre  et  le  cinéma"
         />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://i.imgur.com/a67V47y.png" />
+        <meta property="og:image" content="https://i.imgur.com/rpetSWh.png" />
       </head>
       <body
         suppressHydrationWarning={true}
