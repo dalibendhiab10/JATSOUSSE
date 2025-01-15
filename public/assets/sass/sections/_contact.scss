@@ -79,7 +79,7 @@
 /* Donation Form */
 .donation-form {
     padding: 35px 30px;
-    background: #dfedf0;
+    background: #f0e9df;
     border-radius: 10px;
     @include res-bl(xs) {
         @include gapLR(padding, 20px);
@@ -203,7 +203,7 @@
         left: -65px;
         z-index: -1;
         position: absolute;
-        background: #dfedf0;
+        background: #f0e9df;
         @include size(calc(50vw + 65px), 100%);
         @include res-bl(lg) {
             left: 50%;

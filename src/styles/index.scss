@@ -19,7 +19,7 @@
 }
 
 .input-70s {
-    background: #dfedf0 !important;
+    background: #f0e9df !important;
 }
 
 .title-70s {
@@ -64,43 +64,43 @@
     height: 60px;
     width: 50px;
     border-radius: 10px 0px 0px 10px;
-    border: 2px solid #dfedf0;
+    border: 2px solid #f0e9df;
 }
 
 .qte-btnplus {
     height: 60px;
     width: 50px;
     border-radius: 0px 10px 10px 0px;
-    border: 2px solid #dfedf0;
+    border: 2px solid #f0e9df;
 
 }
 
 .qte-btnminus:hover {
-    border: 2px solid #152a2e;
+    border: 2px solid #2e2815;
 }
 
 .qte-btnplus:hover {
-    border: 2px solid #152a2e;
+    border: 2px solid #2e2815;
 }
 
 .checkout-btn {
-    border: 2px solid #dfedf0;
-    background: #152a2e !important;
-    color: #dfedf0 !important;
+    border: 2px solid #f0e9df;
+    background: #2e2815 !important;
+    color: #f0e9df !important;
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 
 }
 
 .checkout-btn:hover {
-    border: 1px solid #152a2e;
-    background: #dfedf0 !important;
-    color: #152a2e !important;
+    border: 1px solid #2e2815;
+    background: #f0e9df !important;
+    color: #2e2815 !important;
 }
 
 .checkout-btn:active {
-    border: 1px solid #152a2e;
-    background: #dfedf0 !important;
-    color: #152a2e !important;
+    border: 1px solid #2e2815;
+    background: #f0e9df !important;
+    color: #2e2815 !important;
 }
 
 .dimmer {
@@ -115,7 +115,7 @@
 /* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
 /** {
   scrollbar-width: thin;
-  scrollbar-color: #152A2E #DFE9EB;
+  scrollbar-color: #2e2815 #DFE9EB;
 }*/
 
 /* Chrome, Edge and Safari */
@@ -139,11 +139,11 @@
 
 *::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    background-color: #152A2E;
+    background-color: #2e2815;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    background-color: #152A2E;
+    background-color: #2e2815;
 }
 
 *::-webkit-scrollbar-thumb:active {

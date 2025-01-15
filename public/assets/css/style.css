@@ -4746,12 +4746,12 @@ ul li {
 }
 
 .become-volunteer-three .form-style-two .form-control {
-  background: #dfedf0;
+  background: #f0e9df;
 }
 
 /* Vecome Volunteer Four */
 .volunteer-content.form-style-two:not(.text-white) .form-control {
-  background: #dfedf0;
+  background: #f0e9df;
 }
 
 /* Become Volunteer page */
@@ -5229,7 +5229,7 @@ ul li {
 
 .join-us-form.form-style-two .form-control,
 .join-us-form.form-style-two .single-select {
-  background: #dfedf0;
+  background: #f0e9df;
 }
 
 /*------------------------------------------------
@@ -5977,7 +5977,7 @@ ul li {
 }
 
 .blog-comment-form.form-style-two .form-control {
-  background: #dfedf0;
+  background: #f0e9df;
 }
 
 .blog-comment-form.form-style-two label {
@@ -6935,7 +6935,7 @@ ul li {
 /* Donation Form */
 .donation-form {
   padding: 35px 30px;
-  background: #dfedf0;
+  background: #f0e9df;
   border-radius: 10px;
 }
 
@@ -7113,7 +7113,7 @@ ul li {
   left: -65px;
   z-index: -1;
   position: absolute;
-  background: #dfedf0;
+  background: #f0e9df;
   width: calc(50vw + 65px);
   height: 100%;
 }
