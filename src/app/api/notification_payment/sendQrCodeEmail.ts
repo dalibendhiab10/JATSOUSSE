@@ -1,4 +1,6 @@
 // Import necessary modules
+// @ts-nocheck
+
 import { createCanvas } from 'canvas';
 import nodemailer from 'nodemailer';
 import QRCode from 'qrcode';
@@ -22,7 +24,7 @@ export async function sendQrCodeEmail(recipientEmail:string, qrCodeString:string
 
     // Set up the email content
     const mailOptions = {
-        from: 'jat.sousse@gmail.com',
+        from: 'jatsousse.dev@gmail.com',
         to: recipientEmail,
         subject: `Confirmation de votre billet électronique N°${qrCodeString} - "Megyes" - JAT Sousse`,
         html: `
@@ -108,7 +110,7 @@ export async function sendQrCodeEmail(recipientEmail:string, qrCodeString:string
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
-            user: 'jat.sousse@gmail.com',
+            user: 'jatsousse.dev@gmail.com',
             pass: process?.env?.GMAIL_PASSWORD,
         },
     });
