@@ -224,3 +224,61 @@
             font-weight: 700;
     }
     
+
+    /* Container for the table to make it responsive */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Basic table styling */
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+  }
+  
+  /* Table header styling */
+  .custom-table thead {
+    background-color: #f8f9fa;
+  }
+  
+  .custom-table th {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 2px solid #e0e0e0;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  /* Table body styling */
+  .custom-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #555;
+  }
+  
+  /* Hover effect for table rows */
+  .custom-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Striped rows for better readability */
+  .custom-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Center align text in specific columns */
+  .custom-table td.text-center,
+  .custom-table th.text-center {
+    text-align: center;
+  }
+  
+  /* Border radius for the table */
+  .custom-table {
+    border-radius: 8px;
+    overflow: hidden;
+  }
