@@ -1,3 +1,4 @@
+import FacebookEventReplica from "@/components/common/FacebookEventReplica";
 
 
 const EventDetailsSidebar = () => {
@@ -6,8 +7,8 @@ const EventDetailsSidebar = () => {
 
 
       <div className="main-sidebar event-sidebar rmt-75">
-
-      <div className="widget widget-event-info">
+      <FacebookEventReplica/>
+      <div className="widget widget-event-info mt-5" >
         
           <h5 className="widget-title">Informations</h5>
           <ul>
@@ -25,10 +26,10 @@ const EventDetailsSidebar = () => {
                 <i className="fa fa-map-marker-alt"></i>
               </div>{" "}
               <div className="content">
-                <h6>Location</h6>
-                <span style={{ color: "black" }}>
+                <h6>Localisation</h6>
+                <a style={{ color: "black" }} href="https://maps.app.goo.gl/s2GouVXUcL4tRRiLA" target="_blank">
                   Théâtre Municipal de Sousse , Ave Habib Bourguiba, Sousse
-                </span>
+                </a>
               </div>
             </li>
             <li>
@@ -57,7 +58,7 @@ const EventDetailsSidebar = () => {
         </div> */}
 
         <div className="widget widget_location">
-          <h5 className="widget-title">Event Location</h5>
+          <h5 className="widget-title">Localisation</h5>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12939.062455537358!2d10.6408565!3d35.830226!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13027574e7ebb9f5%3A0x458904ab4e53366b!2sMunicipal%20Theater%20of%20Sousse!5e0!3m2!1sen!2stn!4v1709029468096!5m2!1sen!2stn"
             width="600"

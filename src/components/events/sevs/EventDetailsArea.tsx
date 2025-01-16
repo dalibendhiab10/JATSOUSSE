@@ -61,11 +61,10 @@ const EventDetailsArea = () => {
 
             <h5 className="widget-title">ACHETEZ VOS TICKETS EN LIGNE !</h5>
             <EventDetailsForm />
-            <div className='d-flex flex-row gap-5'>
+            {/* <div className='d-flex flex-row gap-5'>
 
               <InstagramEmbed url="https://www.instagram.com/p/DE236Q2Ij1x/" className='mb-5' width={400} />
-              <FacebookEmbed url="https://www.facebook.com/p/18uwDugcuu/" className='mb-5' width={400} height={100} />
-            </div>
+            </div> */}
 
           </div>
           <EventDetailsSidebar />
